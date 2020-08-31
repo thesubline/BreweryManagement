@@ -1,0 +1,256 @@
+/* Public Strand */
+#publicStrand{
+    display: flex;
+    flex-direction: column;
+}
+
+    .main-background{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("/shared/images/backgroundImg01.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 88vh;
+        width: 100%;
+        color: rgb(0, 27, 45);
+    }
+
+        .public-buttons{
+            position: absolute;
+            right: 50px;
+            top: 80px;
+        }
+            
+            .public-buttons *{
+                margin: 10px;
+            }
+
+        .logo-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 50vw;
+            text-align: center;
+        }
+
+            .logo-text img{
+                max-height: 25vh;
+                margin-bottom: 50px;
+            }
+
+            .logo-text p{
+                font-weight: bold;
+                font-size: 25px;
+                color: rgb(255, 99, 107);
+            }
+    
+    .more-info{
+        background: rgb(0, 27, 45);
+        color: rgb(201, 201, 201);
+        text-align: center;
+        padding: 75px;
+        border-top: 5px solid black;
+    }
+
+        .more-info h1{
+            color: rgb(255, 99, 107);
+            margin: 25px;
+            font-size: 45px;
+        }
+
+        .more-info p{
+            font-size: 25px;
+            color: rgb(201, 201, 201);
+            text-align: justify;
+            padding: 10px;
+        }
+
+        .more-info li{
+            font-size: 20px;
+            color: rgb(201, 201, 201);
+            text-align: justify;
+            padding: 10px;
+        }
+
+        .more-info span{
+            font-weight: bold;
+            color: rgb(255, 99, 107);
+        }
+
+/* Login Strand */
+
+#loginStrand, #registerStrand{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/shared/images/backgroundImg01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 91.5vh;
+}
+
+#registerStrand form{
+    margin: 0;
+}
+
+#registerStrand form > *{
+    margin: 2px;
+}
+
+/* ----The Checkbox and Inputs Start---- */
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border: 1px solid#ccc;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkmark:hover {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #5A6F7D;
+    border: 1px solid#5A6F7D;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+/* ----The Checkbox and Inputs End---- */
+
+/* Inputs Start */
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-bottom: 16px;
+    font-size: 16px;
+
+  }
+
+  input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color:rgb(255, 99, 107);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 22px;
+    margin-top: 30px;
+  }
+
+  input[type=submit]:hover {
+    background: rgb(243, 77, 86);
+    color: white;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    border: 2px solid #555;
+    outline: none;
+  }
+
+  input[type=button] {
+    background-color: rgb(255, 99, 107);
+  }
+
+  input[type=button]:hover {
+    background-color:rgb(0, 27, 45);
+  }
+
+  .input-error{
+    border-color: red;
+}
+
+/* Inputs End */
+
+@media screen and (max-width: 600px){
+    .logo-text img{
+        max-height: 20vh;
+    }
+
+    .logo-text p{
+        font-size: 20px;
+    }
+
+    .more-info{
+        padding: 25px;
+    }
+
+    .public-buttons{
+        right: 25vw;
+    }
+}

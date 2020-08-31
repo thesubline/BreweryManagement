@@ -1,0 +1,48 @@
+.strand{
+    justify-content: center;
+}
+
+    .strand{
+        margin: 50px;
+    }
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: -5px -5px 5px rgb(0, 27, 45) inset;
+    padding: 30px;
+    text-align: justify;
+    max-width: 800px;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.content > *{
+    margin: 15px;
+    padding-bottom: 25px;
+}
+
+ol{
+    list-style: decimal inside none;
+}
+
+    ol > *{
+        margin: 10px;
+    }
+
+/* Legal Strand */
+#legalStrand > *{
+    margin: 15px;
+}
+
+/* Help Strand */
+#helpStrand{
+    flex-direction: column;
+    align-items: center;
+}
+
+    #helpStrand > *{
+        margin: 15px;
+    }

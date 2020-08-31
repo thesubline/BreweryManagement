@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>The Subline</title>
+        <link rel="icon" type="img/png" href="/shared/images/logo.png">
+        <link rel="stylesheet" href="/shared/shared.css">
+        <link rel="stylesheet" href="/dashboardPage/dashboard.css">
+        <link rel="stylesheet" href="/dashboardPage/sidebars/sidebars.css">
+        <link href="https://fonts.googleapis.com/css?family=Saira&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <div id="menu" class="menu">
+            <div id="max" class="menuHead">
+                <a href="/">
+                    <img class="menuLogo" src="/shared/images/logo.png" alt="The Subline">
+                    <p>THE SUBLINE</p>
+                </a>
+        
+                <button class="menuShifter" onclick="controller.changeMenu()">&#8801;</button>
+            </div>
+        
+            <div id="min" class="menuHead menuHeadMin">
+                <a href="/">
+                    <img class="menuLogoMin" src="/shared/images/logo.png" alt="The Subline">
+                </a>
+        
+                <button id="menuShifter2" onclick="controller.changeMenu()">&#8801;</button>
+            </div>
+        
+            <button class="menuButton active" id="homeBtn" class="active" onclick="controller.openStrand('home')">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <p>HOME</p>
+            </button>
+        
+            <button class="menuButton" id="ingredientsBtn" onclick="controller.openStrand('ingredients')">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                    <rect x="1" y="3" width="22" height="5"></rect>
+                    <line x1="10" y1="12" x2="14" y2="12"></line>
+                </svg>
+                <p>INGREDIENTS</p>
+            </button>
+        
+            <button class="menuButton" id="recipeBookBtn" onclick="controller.openStrand('recipeBook')">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <p>RECIPE BOOK</p>
+            </button>
+        
+            <button class="menuButton" id="ordersBtn" onclick="controller.openStrand('orders')">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <p>ORDERS</p>
+            </button>
+
+            <button class="menuButton" id="transactionsBtn" onclick="controller.openStrand('transactions')">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                <p>TRANSACTIONS</p>
+            </button>
+        
+            <a class="menuButton" href="/logout">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <p>LOGOUT</p>
+            </a>
+        </div>
+
+        <div id="mobileMenuSelector" class="mobileMenuSelector" onclick="controller.openMenu()">&#8801;</div>
+        <button id="sidebarCloser" style="display: none;" onclick="controller.closeSidebar()">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="contentBlock">
+            <% include ../shared/banner %>
+            
+            <div id="homeStrand" class="strand">
+                <div class="strandHead">
+                    <h1 class="strandTitle">DASHBOARD</h1>
+                </div>
+
+                <div class="flexRow">
+                    <div id="revenueCard" class="card">
+                        <p>Total Revenue (month)</p>
+
+                        <p id="revenue"></p>
+
+                        <div id="revenueChange">
+                            <img alt="revenue">
+
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div id="graphCard" class="card">
+                        <canvas id="graphCanvas">
+                    </div>
+                </div>
+
+                <div class="flexRow">
+                    <div id="inventoryCheckCard" class="card">
+                        <p>Inventory Check</p>
+
+                        <ul></ul>
+
+                        <button id="inventoryCheck" class="button">Update</button>
+                    </div>
+
+                    <div id=popularIngredientsCard class="card">
+                        <p>Most Popular Ingredients (month)</p>
+
+                        <canvas id="popularCanvas"></canvas>
+                    </div>
+                </div>
+
+                <template id="ingredientCheck">
+                    <li class="ingredientCheck flexRow">
+                        <p></p>
+
+                        <div class="numberInput">
+                            <button>-</button>
+                            <input type="number" min="0" step="0.01">
+                            <button>+</button>
+                        </div>
+                        
+                        <p></p>
+                    </li>
+                </template>
+            </div>
+
+            <div id="ingredientsStrand" class="strand">
+                <div class="strandHead">
+                    <h1 class="strandTitle">INGREDIENT INVENTORY</h1>
+
+                    <button class="button mobileHide" onclick="controller.openSidebar('addIngredients')">NEW</button>
+                </div>
+
+                <div class="searchBar">
+                    <div class="searchAndIcon">
+                        <svg class="mobileHide" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input id="ingredientSearch" type="text" placeholder="FILTER">
+                    </div>
+
+                    <button id="ingredientClearButton" class="clearButton" style="display: none;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                    </button>
+
+                    <select id="ingredientSelect" class="mobileHide">Sort By:
+                        <option value="" selected disabled>Sort By:</option>
+                        <option value="_name">Ingredient</option>
+                        <option value="category">Category</option>
+                        <option value="unit">Unit of Measurement</option>
+                    </select>
+                </div>
+
+                <div id="categoryList"></div>
+
+                <template id="categoryDiv">
+                    <div class="categoryDiv">
+                        <div>
+                            <p></p>
+
+                            <button>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="ingredientsDiv"></div>
+                    </div>
+                </template>
+
+                <template id="ingredient">
+                    <div class="ingredient">
+                        <p></p>
+
+                        <hr class="ingredientSpacer mobileHide">
+
+                        <p></p>
+                    </div>
+                </template>
+            </div>
+
+            <div id="recipeBookStrand" class="strand">
+                <div class="strandHead">
+                    <h1 class="strandTitle">RECIPE BOOK</h1>
+
+                    <% if(merchant.pos === "none"){ %>
+                        <button class="button mobileHide" onclick="controller.openSidebar('addRecipe')">NEW</button>
+                    <% }else{ %>
+                        <button id="posUpdateRecipe" class="button mobileHide">UPDATE</button>
+                    <% } %>
+                </div>
+
+                <div class="searchBar">
+                    <div class="searchAndIcon">
+                        <svg class="mobileHide" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input id="recipeSearch" type="text" placeholder="FILTER">
+                    </div>
+
+                    <button id="recipeClearButton" class="clearButton" style="display: none;">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="recipeList"></div>
+
+                <template id="recipe">
+                    <div class="itemDisplay">
+                        <p></p>
+                        <p></p>
+                    </div>
+                </template>
+            </div>
+
+            <div id="ordersStrand" class="strand">
+                <div class="strandHead">
+                    <h1 class="strandTitle">ORDERS</h1>
+
+                    <button class="button mobileHide" onclick="controller.openSidebar('newOrder')">NEW</button>
+                </div>
+
+                <form id="orderSubmitForm" class="filterForm">
+                    <h2>Search</h2>
+                    <div>
+                        <div class="dropdown">
+                            <div class="dropdownHead">
+                                <p>DATES</p>
+                                <button id="dateFilterBtnOrder">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="dropdownContents" id="dateDropdownOrder">
+                                <label>From:
+                                    <input id="orderFilDate1"type="date">
+                                </label>
+                                
+                                <label>To:
+                                    <input id="orderFilDate2" type="date">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <div class="dropdownHead">
+                                <p>INGREDIENTS</p>
+                                <button id="ingredientFilterBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="dropdownContents" id="ingredientDropdown"></div>
+                        </div>
+                    </div>
+
+                    <input class="button" type="submit" value="SUBMIT">
+                </form>
+
+                <div id="orderList"></div>
+
+                <template id="order">
+                    <div class="itemDisplay">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </template>
+            </div>
+
+            <div id="transactionsStrand" class="strand transactions">
+                <div class="strandHead">
+                    <h1 class="strandTitle">TRANSACTIONS</h1>
+
+                    <button class="button mobileHide" onclick="controller.openSidebar('newTransaction')">NEW</button>
+                </div>
+
+                <form id="transFormSubmit" class="filterForm">
+                    <h2>Search</h2>
+                    <div>
+                        <div class="dropdown">
+                            <div class="dropdownHead">
+                                <p>DATES</p>
+                                <button id="dateFilterBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="dropdownContents" id="dateDropdown">
+                                <label>From:
+                                    <input id="transFilDate1"type="date">
+                                </label>
+                                
+                                <label>To:
+                                    <input id="transFilDate2" type="date">
+                                </label>
+                            </div>
+                            
+                        </div>
+                        <div class="dropdown">
+                            <div class="dropdownHead">
+                                <p>RECIPES</p>
+                                <button id="recipeFilterBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="dropdownContents" id="recipeDropDown"></div>
+                        </div>
+                    </div>
+
+                    <input class="button" type="submit" value="SUBMIT">
+                </form>
+
+                <div id="transactionsList" class="transactionsList"></div>
+
+                <template id="transaction">
+                    <div class="itemDisplay">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </template>
+            </div>
+
+        </div>
+
+        <div id="sidebarDiv" class="sidebarHide">
+            <% include ./sidebars/addIngredients %>
+            <% include ./sidebars/newIngredient %>
+            <% include ./sidebars/ingredientDetails %>
+            <% include ./sidebars/recipeDetails %>
+            <% include ./sidebars/newRecipe %>
+            <% include ./sidebars/orderDetails %>
+            <% include ./sidebars/newOrder %>
+            <% include ./sidebars/transactionDetails %>
+            <% include ./sidebars/newTransaction %>
+        </div>
+
+        <% include ../shared/loader %>
+
+        <script>
+            let data = {
+                merchant: <%- JSON.stringify(merchant) %>,
+                transactions: <%- JSON.stringify(transactions) %>
+            }
+        </script>
+        <script src="./dashboardPage/bundle.js"></script>
+
+        <noscript>Please turn on javascript for this site to work properly</noscript>
+    </body>
+</html>

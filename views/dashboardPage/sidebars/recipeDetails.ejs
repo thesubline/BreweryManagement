@@ -1,0 +1,71 @@
+<div id="recipeDetails">
+    <div class="sidebarIconButtons">
+        <button class="iconButton" onclick="controller.closeSidebar()">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+
+        <button id="editRecipeBtn" class="iconButton">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+        </button>
+
+        <% if(merchant.pos === "none"){ %>
+            <button id="removeRecipeBtn" class="iconButton">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+            </button>
+        <% } %>
+    </div>
+
+    <h1 id="recipeName"></h1>
+    
+    <input id="recipeNameIn" type="text" style="display: none;">
+
+    <div id="recipeIngredientList"></div>
+
+    <button id="addRecIng" class="iconButton" style="display: none;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
+    </button>
+
+    <div class="lineBorder"></div>
+
+    <div id="recipePrice">
+        <h3>Price</h3>
+        <p></p>
+        <input type="number" min="0" step="0.01" style="display: none;">
+    </div>
+
+    <button id="recipeUpdate" class="button" style="display: none;">Update</button>
+
+    <template id="recipeIngredient">
+        <div class="recipeIngredient">
+            <p class="recipeIngredientElement"></p>
+            <input class="recipeIngredientElement"type="number" min="0" step="0.01" style="display: none;">
+            <p class="recipeIngredientElement"></p>
+            <button class="iconButton" style="display: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+            </button>
+        </div>
+    </template>
+
+    <template id="addRecIngredient">
+        <div class="addRecIngredient">
+            <select></select>
+            <input type="number" min="0" step="0.01">
+        </div>
+    </template>
+</div>

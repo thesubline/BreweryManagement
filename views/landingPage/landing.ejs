@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>The Subline</title>
+        <link rel="icon" type="img/png" href="/shared/images/logo.png">
+        <link rel="stylesheet" href="/landingPage/landing.css">
+        <link rel="stylesheet" href="/shared/shared.css">
+    </head>
+    <body>
+        <% include ../shared/header %>
+
+        <% include ../shared/banner %>
+
+        <div id="publicStrand">
+            <div class="main-background">
+                <div class="logo-text">
+                    <img src="/shared/images/logoWithText.png" alt="Subline">
+
+                    <p>The only inventory-POS integration that reduces food, time, and waste costs through automation, machine learning, and data-driven analysis.</p>
+                </div>
+            </div>
+
+            <div class="more-info">
+                <h1>TIME IS MONEY</h1>
+
+                <p>For any restaurant owner familiar with this age-old adage (ie: everyone), the Subline integration creates an immediate impact by freeing up time to focus on their heighest priorities.  Yes, all good managers understand why it is important to control food and waste costs but staying on top of this task becomes burdensome and pushed aside with the volume of operational and customer issues faced every day.  It's the unfortunate side-effect of restaurant owners who lack ideal support and continually compete against razor thin margins.</p>
+
+                <div class="line-break"></div>
+
+                <h1>HOW IT WORKS</h1>
+
+                <p>LET THE SUBLINE HELP SAVE YOU TIME WITH:</p>
+
+                <ul>
+                    <li><span>Real Time Tracking</span> - Inventory is updated in real-time with resupply and customer purchases.  This eliminates the guess work for owners who want to know what is on their shelves.</li>
+                    <li><span>True Cost of Inventory</span> - The true cost of each item on owner's shelves are tracked against waste, returns, samples, etc.  This allows owners to determine the opportunity cost of inventory, and how it affects the bottom line.</li>
+                    <li><span>Recipe Integration</span> - The Subline integrates recipes into inventory management.  This gives owners the ability to conduct cost modeling and profit projections based on ingredient type, quantity, and source.</li>
+                    <li><span>Report Generation</span> - The Subline generates weekly, monthly, and annual reports that includes KPIs and trend analysis to help owners make decisions.  The Subline also generates weekly spot-check reports to ensure you never run out of a customer favorite during peak demand.</li>
+                    <li><span>Waste Audit Reporting</span> - The Subline generates daily audits for the owner.  Integrating daily auditing into routine kitchen operations means that responsible waste prevention will become part of the restaurant's culture and will have implications both socially and on the bottom line.</li>
+                    <li><span>Trend Identification</span> - Trends happen in cycles.  The Subline helps identify these trends, such as seasonal changes in menu demand, supply pricing, and local supply shortages, to give owners the information they need for inventory management.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="registerStrand">
+            <form onsubmit="registerObj.submit()">
+                <h1> Join Subline </h1>
+
+                <label id="nameLabel">Restaurant Name
+                    <input class="input" id="regName" name="name" type="text" required>
+                </label>
+        
+                <label>Email
+                    <input type="text" id="regEmail" name="email" type="email" required>
+                </label>
+        
+                <label>Password
+                    <input type="password" id="regPass" name="password" type="password" required>
+                </label>
+        
+                <label>Confirm Password
+                    <input type="password" id="regConfirmPass" name="confirmPassword" type="password" required>
+                </label>
+        
+                <div id="agreement">
+                    <label class="container">
+                        <input id="checkAgree" type="checkbox">
+
+                        <span class="checkmark"></span>
+        
+                        <p style="padding-top: 5px; padding-left: 7px;">I agree to the 
+                            <a class="link" href="/information">Privacy Policy</a> and the 
+                            <a class="link" href="/information">Terms and Conditions</a>
+                        </p>
+                    </label>   
+                </div>
+
+                <input id="regButton" class="buttonDisabled" type="submit" value="Sign Up with Email">
+
+                <h1>OR</h1>
+
+                <a class="button buttonWithBorder" href="/cloverlogin">Sign Up with Clover</a>
+
+                <a class="button buttonWithBorder" href="/squarelogin">Sign Up with Square</a>
+
+                <h3 class="link" style="margin-top: 30px;" onclick="loginObj.display()"> Already have an account? Please Sign In </h3>
+            </form>
+        </div>
+
+        <div id="loginStrand">
+            <form action="/login" method="post">
+                <h1> Welcome Back </h1>
+        
+                <label>Email
+                    <input type="text" name="email" type="email" required>
+                </label>
+        
+                <label>Password
+                    <input type="password" name="password" required>
+                </label>
+        
+                <input id="signIn" type="submit" value="Sign In with Email">
+
+                <h1>OR</h1>
+
+                <a class="button buttonWithBorder" href="/cloverlogin">Sign In with Clover</a>
+
+                <a class="button buttonWithBorder" href="/squarelogin">Sign In with Square</a>
+
+                <h3 class="link" style="margin-top: 30px;" onclick="registerObj.display()"> New Here? Please Sign Up </h3>
+            </form>
+        </div>
+
+        <% include ../shared/footer %>
+
+        <% include ../shared/loader %>
+
+        <script>
+            let error = <%- JSON.stringify(error) %>;
+            let isLoggedIn = <%- JSON.stringify(isLoggedIn) %>;
+        </script>
+        <script src="../shared/validation.js"></script>
+        <script src="/landingPage/public.js"></script>
+        <script src="/landingPage/login.js"></script>
+        <script src="/landingPage/register.js"></script>
+        <script src="/landingPage/controller.js"></script>
+    </body>
+</html>

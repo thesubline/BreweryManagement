@@ -1,0 +1,64 @@
+<div id="addIngredients">
+    <div class="sidebarIconButtons">
+        <button class="iconButton" onclick="controller.closeSidebar()">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+    </div>
+    
+    <h2>AVAILABLE INGREDIENTS</h2>
+
+    <div id="addIngredientList"></div>
+
+    <div class="lineBorder"></div>
+
+    <div id="myIngredientsDiv">
+        <h2>MY INGREDIENTS</h2>
+
+        <div id="myIngredients"></div>
+
+        <div class="lineBorder"></div>
+    </div>
+
+    <button id="addIngredientsBtn" class="button">CREATE</button>
+
+    <button class="button2Link" id="openNewIngredient">CAN'T FIND WHAT YOU'RE LOOKING FOR? CREATE IT...</button>
+
+    <template id="addIngredientsCategory">
+        <div class="addIngredientsCategory">
+            <div class="categoryHeader">
+                <h5></h5>
+                
+                <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="addIngredientsIngredients"></div>
+        </div>
+    </template>
+
+    <template id="addIngredientsIngredient">
+        <div class="addIngredientsIngredient">
+            <div>
+                <p></p>
+
+                <button class="addButton">+</button>
+            </div>
+
+            <div style="display: none;">
+                <input type="number" min="0" step="0.01" placeholder="QUANTITY">
+
+                <select></select>
+            </div>
+        </div>
+    </template>
+</div>

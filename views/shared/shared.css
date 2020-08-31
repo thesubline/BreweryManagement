@@ -1,0 +1,336 @@
+/* Initialization for all pages */
+*{margin:0;padding:0;font-family:'Saira',sans-serif;}
+
+body{
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 27, 45);
+    min-height: 100vh;
+}
+
+/* Loader */
+#loaderContainer{
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 27, 45, 0.5);
+    z-index: 2;
+    position: fixed;
+}
+
+.loader{
+    margin-bottom: 200px;
+    margin-right: 100px;
+}
+
+.loader .outer{
+    border: 10px solid rgba(255, 255, 255, 0);
+    border-top: 10px solid rgba(255, 99, 107, 0.8);
+    border-bottom: 10px solid rgba(255, 99, 107, 0.8);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    animation: spin1 2s infinite;
+    position: absolute;
+}
+
+.loader .mid{
+    border: 10px solid rgba(255, 255, 255, 0);
+    border-right: 10px solid rgba(0, 27, 45, 0.8);
+    border-left: 10px solid rgba(0, 27, 45, 0.8);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin: 10px 0 0 10px;
+    animation: spin2 2s infinite;
+    position: absolute;
+}
+
+.loader .inner{
+    border: 10px solid rgba(255, 255, 255, 0);
+    border-top: 10px solid rgba(179, 191, 209, 0.8);
+    border-bottom: 10px solid rgba(179, 191, 209, 0.8);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 20px 0 0 20px;
+    animation: spin3 2s infinite;
+    position: absolute;
+}
+
+.loader img{
+    margin: 10px 0 0 10px;
+    height: 70px;
+    width: 80px;
+    position: absolute;
+    z-index: -1;
+    animation: imgSpin 3s linear infinite;
+}
+
+@keyframes spin1{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin2{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(720deg); }
+}
+
+@keyframes spin3{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(1080deg); }
+}
+
+@keyframes imgSpin{
+    0% { 
+        transform: rotateY(0deg);
+    }
+
+    100% { 
+        transform: rotateY(360deg);
+    }
+}
+
+/* General style that should apply to all pages */
+h1 {
+    text-align: center;
+    padding-bottom: 13px;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 500;
+    color: gray;
+    font-size: 20px;
+}
+
+button{
+    outline: 0;
+}
+
+button::-moz-focus-inner{
+    border: 0;
+}
+
+.link {
+    cursor: pointer;
+    color: gray;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #ff636b;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid rgb(0, 27, 45);
+    padding: 50px;
+    border-radius: 10px;
+    margin: 10px;
+    background: rgb(240, 252, 255);
+    font-size: 16px;
+    margin-top: 40px;
+    width: 550px;
+    justify-content: space-evenly;
+    height: auto;
+}
+
+.button{
+    display: initial;
+    background: rgb(255, 99, 107);
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 100px;
+} 
+
+    .buttonWithBorder {
+        background: white;
+        border: rgb(255, 99, 107) solid 2px;
+        color: rgb(255, 99, 107);
+        margin: 0;
+        margin-bottom: 12px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+.button:hover{
+    background: rgb(243, 77, 86);
+    color: white;
+}
+
+.button-small{
+    background: none;
+    border: 2px solid rgb(255, 99, 107);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 3px 5px;
+    color: #001b2d;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px black;
+    margin: 0 2px;
+    transition: 0.3s; 
+}
+
+.public-buttons {
+    position: inherit;
+    align-self: center;
+    margin-right: 39px;
+}
+
+    .button-small:hover{
+        background: rgb(0, 27, 45);
+        color: rgb(240, 252, 255);
+    }
+
+.buttonDisabled{
+    background: gray;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 5px;
+    color: rgb(0, 27, 45);
+    cursor: default;
+    font-size: 25px;
+    text-align: center;
+}
+
+.line-break{
+    border: 1px solid rgb(255, 99, 107);
+    margin: 30px 0;
+}
+
+
+.strand, .action{
+    display: none;
+}
+
+.strand{
+    transition: width 1s linear;
+}
+
+/* Header partial */
+.header{
+    display: flex;
+    justify-content: space-between;
+    background: #001b2d;
+    width: 100%;
+    height: 75px;
+}
+
+    .header .logo{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-left: 20px;
+    }
+
+    .header-logo{
+        display: inline-block;
+        color: rgb(255, 99, 107);
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .header img{
+        display: inline-block;
+        max-height: 40px;
+        margin: 15px;
+        text-align: center;
+    }
+
+    .header h1{
+        display: inline-block;
+        color: rgb(255, 99, 107);
+    }
+
+    .header .logout{
+        display: flex;
+        align-items: center;
+        color: rgb(255, 99, 107);
+        float: right;
+        margin-right: 25px;
+        text-decoration: none;
+    }
+
+    .button-join {
+        font-size: medium;
+        color:white;
+        text-decoration: blink;
+    }
+
+/* Banner partial */
+.banner{
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+    font-size: 20px;
+    color: white;
+    z-index: 10;
+    position: absolute;
+    border-radius: 5px;
+}
+
+    .banner .notification{
+        background: rgba(1, 140, 15, 0.75);
+        list-style-type: none;
+        padding: 5px;
+    }
+
+    .banner .error{
+        background: rgba(255, 0, 0, 0.75);
+        list-style-type: none;
+        padding: 5px;
+    }
+
+/* Footer Partial */
+.spacer{
+    flex: 1;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: rgb(240, 252, 255);
+}
+
+    .footer > *{
+        margin: 5px;
+    }
+
+    .footer div > *{
+        margin: 0 25px;
+    }
+
+@media screen and (max-width: 600px){
+    .button{
+        font-size: 15px;
+    }
+
+    .truncateLong{
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+label {
+    margin-top:20px ;
+}

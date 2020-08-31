@@ -1,0 +1,57 @@
+<div id="ingredientDetails">
+    <div class="sidebarIconButtons mobileHide">
+        <button class="iconButton" onclick="controller.closeSidebar()">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+
+        <button id="editIngBtn" class="iconButton">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+        </button>
+
+        <button id="removeIngBtn" class="iconButton">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+        </button>
+    </div>
+
+    <p></p>
+    
+    <h1></h1>
+
+    <div class="lineBorder"></div>
+
+    <label>CURRENT STOCK
+        <p id="ingredientStock"></p>
+        <input id="ingredientInput" type="number" min="0" step="0.01" style="display: none;">
+    </label>
+
+    <div class="lineBorder"></div>
+
+    <label>AVERAGE DAILY USE (30 DAYS)
+        <p id="dailyUse"></p>
+    </label>
+
+    <div class="lineBorder"></div>
+
+    <label>RECIPES:
+        <ul id="ingredientRecipeList"></ul>
+    </label>
+
+    <div class="lineBorder"></div>
+
+    <label id="displayUnitLabel">DISPLAY UNIT:</label>
+
+    <div id="ingredientButtons" class="ingredientButtons"></div>
+
+    <button id="defaultUnit" class="button">SET DEFAULT</button>
+
+    <button id="editSubmitButton" class="button" style="display: none;">SAVE CHANGES</button>
+</div>

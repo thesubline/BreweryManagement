@@ -1,0 +1,61 @@
+<div id="newIngredient">
+    <div class="sidebarIconButtons">
+        <button class="iconButton" onclick="controller.closeSidebar()">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <h1>NEW INGREDIENT</h1>
+
+    <label>NAME:
+        <input id="newIngName" type="text">
+    </label>
+
+    <label>CATEGORY:
+        <input id="newIngCategory" type="text">
+    </label>
+
+    <label>QUANTITY:
+        <input id="newIngQuantity" type="number" min="0" step="0.01">
+    </label>
+
+    <label>UNIT:
+        <select id="unitSelector">
+            <optgroup label="MASS/WEIGHT">
+                <option type="mass" value="g">G</option>
+                <option type="mass" value="kg">KG</option>
+                <option type="mass" value="oz">OZ</option>
+                <option type="mass" value="lb">LB</option>
+            </optgroup>
+
+            <optgroup label="VOLUME">
+                <option type="volume" value="ml">ML</option>
+                <option type="volume" value="l">L</option>
+                <option type="volume" value="tsp">TSP</option>
+                <option type="volume" value="tbsp">TBSP</option>
+                <option type="volume" value="ozfl">OZ. FL</option>
+                <option type="volume" value="cup">CUP</option>
+                <option type="volume" value="pt">PT</option>
+                <option type="volume" value="qt">QT</option>
+                <option type="volume" value="gal">GAL</option>
+            </optgroup>
+
+            <optgroup label="LENGTH">
+                <option type="length" value="mm">MM</option>
+                <option type="length" value="cm">CM</option>
+                <option type="length" value="m">M</option>
+                <option type="length" value="in">IN</option>
+                <option type="length" value="ft">FT</option>
+            </optgroup>
+
+            <optgroup label="OTHER">
+                <option type="other" value="each">each</option>
+            </optgroup>
+        </select>
+    </label>
+
+    <button id="submitNewIng" class="button">CREATE</button>
+</div>

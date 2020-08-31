@@ -1,0 +1,56 @@
+<div class="banner">
+    <ul></ul>
+</div>
+
+<script>
+    let banner = {
+        errorList: [],
+        notificationList: [],
+
+        createNotification: function(value){
+            this.notificationList.push(value);
+
+            this.updateNotifications();
+
+            setTimeout(()=>{
+                this.notificationList.splice(0, 1);
+                this.updateNotifications();
+            }, 10000);
+        },
+
+        createError: function(value){
+            this.errorList.push(value);
+
+            this.updateNotifications();
+
+            setTimeout(()=>{
+                this.errorList.splice(0, 1);
+                this.updateNotifications();
+            }, 10000);
+        },
+
+        updateNotifications: function(){
+            let banner = document.querySelector(".banner");
+            let ul = document.querySelector(".banner ul");
+
+            while(ul.hasChildNodes()){
+                ul.removeChild(ul.firstChild);
+            }
+
+            for(let i = 0; i < this.notificationList.length; i++){
+                let li = document.createElement("li");                                                                       
+                                                                                                            
+                li.classList = "notification";
+                li.innerText = this.notificationList[i];
+                ul.appendChild(li);
+            }
+
+            for(let i = 0; i < this.errorList.length; i++){
+                let li = document.createElement("li");
+                li.classList = "error";
+                li.innerText = this.errorList[i];
+                ul.appendChild(li);
+            }
+        }
+    }
+</script>

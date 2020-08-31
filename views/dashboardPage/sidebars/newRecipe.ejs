@@ -1,0 +1,44 @@
+<div id="addRecipe">
+    <div class="sidebarIconButtons">
+        <button class="iconButton" onclick="controller.closeSidebar()">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <h1>NEW RECIPE</h1>
+
+    <div class="recipeBasicInfo">
+        <label>NAME:
+            <input id="newRecipeName" type="text">
+        </label>
+
+        <label>PRICE:
+            <input id="newRecipePrice" type="number" step="0.01" min="0">
+        </label>
+
+        <label># OF INGREDIENTS
+            <input id="ingredientCount" type="number" step="1" min="1">
+        </label>
+    </div>
+
+    <h2>INGREDIENTS</h2>
+    
+    <div id="recipeInputIngredients">
+        <div>
+            <h4>INGREDIENT 1</h4>
+
+            <label>INGREDIENT:
+                <select></select>
+            </label>
+
+            <label>QUANTITY:
+                <input type="number" step="0.01" min="0">
+            </label>
+        </div>
+    </div>
+    
+    <button id="submitNewRecipe" class="button">CREATE</button>
+</div>

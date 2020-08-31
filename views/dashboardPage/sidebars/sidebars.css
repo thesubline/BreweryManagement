@@ -1,0 +1,723 @@
+/* Menu */
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(0, 27, 45);
+    width: 18vw;
+    height: 100vh;
+    transition: width 0.3s;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+    .menuHead{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+        margin-top: 10px;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 50px;
+        text-decoration: none;
+    }
+
+    .menuLogo{
+        width: 25%;
+        height: 25%;
+    }
+
+    .menuHead a{
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        width: 80%;
+    }
+
+    .menuHead p{
+        margin-left: 25px;
+    }
+
+    .menuHead button{
+        background: none;
+        border-style: none;
+        color: white;
+        font-size: 35px;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .menuHead button:hover{
+        color: rgb(201, 201, 201);
+    }
+
+    .menuHead > button::-moz-focus-inner{
+        border: 0;
+    }
+
+    .menuButton{
+        display: flex;
+        align-items: center;
+        background: none;
+        border-style: none;
+        color: white;
+        font-size: 20px;
+        margin: 15px 0;
+        padding-left: 50px;
+        width: 100%;
+        height: 75px;
+        cursor: pointer;
+        text-align: left;
+        border: 0;
+        outline: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+
+        .menuButton svg{
+            stroke: white;
+            margin-right: 25px;
+        }
+
+        .menuButton::-moz-focus-inner{
+            border: 0;
+        }  
+
+        .menuButton:hover{
+            background: rgb(201, 201, 201);
+            color: black;
+            fill: black;
+        }
+
+        .menuButton:hover svg{
+            stroke: black;
+        }
+
+.menu > .active{
+    background: rgb(179, 191, 209);
+    cursor: default;
+}
+
+.menu > .active:hover{
+    background: rgb(179, 191, 209);
+    color: white;
+}
+
+.menu > .active:hover svg{
+    stroke: white;
+}
+
+/* Minimized menu */
+.menuMinimized{
+    width: 5vw;
+}
+
+.menuLogoMin{
+    width: 4vw;
+}
+
+.menuHeadMin{
+    display: none;
+    flex-direction: column;
+}
+
+.menuMinimized .menuButton{
+    justify-content: center;
+    padding: 0;
+}
+
+.menuMinimized .menuButton svg{
+    margin: 0;
+}
+
+.sidebar{
+    display: flex;
+    width: 25vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 25px;
+    transition: width 0.2s;
+    overflow: hidden;
+    box-shadow: -1px 0px 10px gray;
+}
+
+.sidebarHide{
+    width: 0;
+    transition: width 0.2s;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: -1px 0px 10px gray;
+}
+
+    .sidebarHide > *{
+        width: 0;
+        transition: width 0.2s;
+        visibility: hidden;
+    }
+
+.sidebarIconButtons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.iconButton{
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+    .iconButton:hover{
+        background: rgb(0, 27, 45);
+        color: white;
+    }
+
+.lineBorder{
+    width: 100%;
+    border-bottom: 1px solid gray;
+    margin: 25px;
+}
+
+.mobileMenuSelector{
+    display: none;
+    position: fixed;
+    left: 13px;
+    top: -2px;
+    font-size: 40px;
+}
+
+    .mobileMenuSelector:active{
+        color: rgb(255, 99, 107);
+    }
+
+/* 
+Add Ingredients 
+*/
+#addIngredients{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+    #addIngredients > *{
+        width: 100%;
+    }
+
+    #addIngredientList{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        margin-bottom: 15px;
+        max-height: 35%;
+    }
+    
+    #myIngredientsDiv{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        max-height: 40%;
+    }
+
+        #myIngredients{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            overflow-y: auto;
+        }
+
+    #addIngredientsBtn{
+        width: 25%;
+        margin-left: auto;
+    }
+
+    .addIngredientsCategory{
+        width: 90%;
+    }
+
+        .categoryHeader{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border: 1px solid black;
+            background: rgb(240, 252, 255);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+            .categoryHeader > button{
+                display: flex;
+                align-items: center;
+                background: none;
+                border: none;
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .categoryHeader > button:hover{
+                background: rgb(0, 27, 45);
+                color: white;
+            }
+
+        .addIngredientsIngredients{
+            flex-direction: column;
+            padding: 0 20px;
+        }
+
+            .addIngredientsIngredient{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 5px;
+                border: 1px solid black;
+                background: rgb(240, 252, 255);
+                padding: 1px 3px;
+                border-radius: 5px;
+            }
+
+                .addIngredientsIngredient div{
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                }
+
+                .addIngredientsIngredient div:first-of-type{
+                    justify-content: space-around;
+                }
+
+                .addIngredientsIngredient div:last-of-type > *{
+                    margin: 0 5px;
+                }
+
+                .addIngredientsIngredient div:last-of-type{
+                    justify-content: center;
+                }
+
+                .addIngredientsIngredient input[type=number]{
+                    width: 100px;
+                }
+
+                .addIngredientsIngredient select{
+                    width: 100px;
+                }
+
+                .addButton{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 25px;
+                    font-weight: bold;
+                    background: none;
+                    border: none;
+                    border-radius: 5px;
+                    width: 30px;
+                    cursor: pointer;
+                }
+
+                    .addButton:hover{
+                        background:rgb(0, 27, 45);
+                        color: white;
+                    }
+
+/* 
+Ingredient Details 
+*/
+#ingredientDetails{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+    #ingredientDetails > p{
+        border-radius: 10px;
+        background: gray;
+        color: white;
+        padding: 0 3px;
+        font-size: 14px;
+    }
+
+    #ingredientDetails label{
+        font-size: 20px;
+        text-align: center;
+        margin: 0;
+    }
+
+    #ingredientDetails label p{
+        font-size: 30px;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    .ingredientButtons{
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+        .unitButton{
+            margin: 5px;
+            padding: 3px;
+            background: none;
+            border: 1px solid black;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            .unitButton:hover{
+                background: rgb(0, 27, 45);
+                color: white;
+            }
+
+            .unitActive{
+                background: rgb(255, 99, 107);
+            }
+
+        #defaultUnit{
+            padding: 5px;
+            font-size: 15px;
+        }
+
+    #ingredientRecipeList{
+        list-style: none;
+        overflow: auto;
+        max-height: 150px;
+        width: 90%;
+        margin-left: auto;
+    }
+
+    #ingredientRecipeList > li{
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        background: rgb(240, 252, 255);
+        border: 1px solid black;
+        cursor: pointer;
+        margin: 1px 0;
+    }
+
+        #ingredientRecipeList > li:hover{
+            background: rgb(0, 27, 45);
+            color: white;
+        }
+
+/* 
+Recipe Details 
+*/
+#recipeDetails{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+    #recipeNameIn{
+        font-size: 32px;
+        width: 75%;
+        text-align: center;
+    }
+
+    #recipeIngredientList{
+        width: 100%;
+    }
+
+    #recipePrice{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        #recipePrice p{
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+    #recipeUpdate{
+        margin: 25px 0 0 0;
+    }
+
+    .recipeIngredient{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px;
+        text-align: center;
+    }
+
+        .recipeIngredient > *:first-of-type{
+            text-align: left;
+        }
+
+        .recipeIngredientElement{
+            width: 30%;
+        }
+
+    .addRecIngredient{
+        display: flex;
+        justify-content: center;
+        margin-right: 3px;
+    }
+
+        .addRecIngredient input{
+            max-width: 25%;
+            margin-left: 3px;
+        }
+/*
+Add Recipe
+*/
+#addRecipe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+    .recipeBasicInfo{
+        width: 75%;
+        background: rgb(240, 252, 255);
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+
+        .recipeBasicInfo label{
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .recipeBasicInfo input{
+            width: 50%;
+        }
+
+    #addRecipe h2{
+        margin-top: 10px;
+    }
+
+    #recipeInputIngredients{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 0 0 25px 0;
+        width:100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-shadow: 0 0 2px gray;
+        border-radius: 5px;
+    }
+
+        #recipeInputIngredients div{
+            width: 75%;
+            background: rgb(240, 252, 255);
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+            #recipeInputIngredients div > label{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 2px;
+            }
+
+            #recipeInputIngredients input{
+                width: 100px;
+            }
+
+            #recipeInputIngredients div h4{
+                color: rgb(255, 99, 107);
+            }
+
+    #addRecipe button:last-of-type{
+        margin-top: auto;
+    }
+
+/* New Order */
+#newOrder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+    #newOrderCategories{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 25px;
+        max-height: 25%;
+        overflow: auto;
+    }
+
+    #newOrderAdded{
+        max-height: 25%;
+        width: 100%;
+        overflow: auto;
+    }
+
+/* New Ingredient */
+#newIngredient{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+    #newIngredient label{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: rgb(240, 252, 255);
+        border-radius: 5px;
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    #newIngredient .button{
+        margin: 15px 0 0 auto;
+    }
+
+/* Order Details */
+#orderDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+    #orderIngredients{
+        width: 90%;
+        overflow: auto;
+    }
+
+    #orderTotalPrice{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .orderIngredient{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        background: rgb(240, 252, 255);
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+/*
+Transaction Details
+*/
+.transactionDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+    .transactionRecipes{
+        width: 100%;
+    }
+
+    .totals{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+/*
+New Transaction
+*/
+.newTransaction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+    .newTransactionRecipes{
+        width: 100%;
+        height: 90%;
+        overflow-y: auto;
+    }
+
+@media screen and (max-width: 1400px){
+    .sidebar{
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .sidebar{
+        width: 100vw;
+    }
+
+    .sidebarIconButtons > .iconButton{
+        display: none;
+    }
+
+    .menu{
+        display: none;
+        width: 100vw;
+        height: 100vh;
+    }
+
+        .menuHead{
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+            .menuHead a{
+                display: flex;
+                justify-content: right;
+                width: 70%;
+            }
+
+        .menuShifter{
+            display: none;
+        }
+
+    .mobileMenuSelector{
+        display: block;
+        z-index: 20;
+    }
+
+    #orderIngredients{
+        width: 100%;
+    }
+    
+        .orderIngredient{
+            color: black;
+        }
+
+    #ingredientRecipeList li{
+        color: black;
+    }
+}

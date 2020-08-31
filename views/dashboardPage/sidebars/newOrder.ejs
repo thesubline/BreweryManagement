@@ -1,0 +1,53 @@
+<div id="newOrder">
+    <div class="sidebarIconButtons">
+        <button class="iconButton" onclick="controller.closeSidebar()">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <h1>NEW ORDER</h1>
+
+    <label>ID/NAME:
+        <input id="orderName" type="text">
+    </label>
+
+    <label>Date:
+        <input id="orderDate" type="date">
+    </label>
+
+    <label>Time:
+        <input id="orderTime" type="time">
+    </label>
+    
+
+    <div id=newOrderCategories></div>
+
+    <div class="lineBorder"></div>
+
+    <h2>INGREDIENTS</h2>
+
+    <div id="newOrderAdded"></div>
+
+    <div class="lineBorder"></div>
+
+    <button id="submitNewOrder" class="button">CREATE</button>
+
+    <template id="newOrderIngredient">
+        <div class="addIngredientsIngredient">
+            <div>
+                <p></p>
+
+                <button class="addButton">+</button>
+            </div>
+
+            <div style="display: none;">
+                <input type="number" min="0" step="0.01" placeholder="QUANTITY">
+
+                <input type="number" min="0" step="0.01" placeholder="PRICE PER UNIT">
+            </div>
+        </div>
+    </template>
+</div>

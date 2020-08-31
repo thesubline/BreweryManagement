@@ -1,0 +1,681 @@
+/* 
+General page styling
+*/
+html{
+    height: 100%;
+    max-width: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    max-width: 100%;
+}
+
+.contentBlock{
+    width: 100%;
+    height: 100vh;
+    flex: 1;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+/* 
+Multi-strand use classes 
+*/
+.strand{
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+}
+
+    .strandHead{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 50px 0 50px;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+        .strandTitle{
+            text-align: left;
+            margin: 15px;
+            padding: 0;
+        }
+
+.itemDisplay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    background: rgb(240, 252, 255);
+    border-radius: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+    .itemDisplay:hover{
+        background: rgb(0, 27, 45);
+        color: white;
+    }
+
+    .itemDisplay > *:first-of-type{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+.smallItemDisplay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    background: rgb(240, 252, 255);
+    border-radius: 5px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+.searchBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+    width: 80%;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    background: rgb(0, 27,45);
+    border-radius: 5px;
+}
+
+    .searchAndIcon{
+        display: flex;
+        width: 25%;
+    }
+
+        .searchAndIcon svg{
+            background: rgb(201, 201, 201);
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+            color: gray;
+            padding: 5px 0 5px 5px;
+            width: 30px;
+            z-index: 10;
+        }
+
+        .searchAndIcon input{
+            background: rgb(201, 201, 201);
+            border: none;
+            height: 30px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+            font-size: 20px;
+            padding: 5px 0 5px 10px;
+            max-width: 200px;
+        }
+
+    .clearButton{
+        background: none;
+        border: none;
+        color: rgb(255, 99, 107);
+        cursor: pointer;
+    }
+
+        .clearButton:hover{
+            background: rgb(0, 27, 45);
+        }
+
+    .searchBar select{
+        background: rgb(201, 201, 201);
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        height: 30px;
+        padding: 5px 0;
+        box-sizing: content-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-position-y: 50%;
+        cursor: pointer;
+    }
+
+    .button2Link{
+        background: none;
+        border: none;
+        color: blue;
+        text-decoration: underline;
+        font-size: 15px;
+        margin-top: auto;
+        cursor: pointer;
+    }
+
+#sidebarCloser{
+    width: 30px;
+    background: rgb(0, 27, 45);
+    color: white;
+    margin-right: auto;
+    border: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+}
+
+/* 
+Home Strand 
+*/
+#homeStrand{
+    display: flex;
+}
+
+    .card{
+        margin: 0 15px;
+        border: 1px solid rgba(183, 183, 183, 0.9);
+        border-radius: 7px;
+        box-shadow: 1px 2px gray;
+        flex-grow: 1;
+        height: 100%;
+    }
+
+    .card > *{
+        margin: 10px;
+    }
+
+    .card p:first-of-type{
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .flexRow{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        flex-basis: 100px;
+        flex-grow: 1;
+        margin: 15px 0;
+    }
+
+#revenueCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    #revenue{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    #revenueChange{
+        display: flex;
+    }
+
+    #revenueChange > p{
+        font-weight: 100;
+    }
+
+    #revenueChange img{
+        height: 15px;
+        width: 15px;
+        margin-right: 10px;
+    }
+
+#graphCard{
+    flex-grow: 5;
+    display: flex;
+    justify-content: center;
+}
+
+#inventoryCheckCard{
+    display: flex;
+    flex-direction: column;;
+    justify-content: space-between;
+    flex-basis: 100px;
+    flex-grow: 1;
+}
+
+    #inventoryCheckCard ul{
+        list-style: none;
+    }
+
+    #inventoryCheckCard button{
+        margin-left: auto;
+    }
+
+    .ingredientCheck{
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+    }
+
+        .ingredientCheck p:first-of-type{
+            width: 37%;
+            font-weight: 300;
+            font-size: 15px;
+            margin-right: 25px;
+        }
+
+        .ingredientCheck p:last-of-type{
+            width: 25%
+        }
+
+        .numberInput{
+            display: flex;
+            justify-content: center;
+            width: 37%;
+            margin-right: 25px;
+        }
+
+            .numberInput button{
+                width: 30%;
+                font-size: 23px;
+                background: rgb(0, 27, 45);
+                border: none;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .numberInput button:first-of-type{
+                border-bottom-left-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+
+            .numberInput button:last-of-type{
+                border-bottom-right-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            .numberInput input{
+                width: 40%;
+                font-size: 15px;
+                text-align: center;
+            }
+
+            .numberInput input::-webkit-outer-spin-button,
+            .numberInput input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            .numberInput input[type=number] {
+                -moz-appearance: textfield;
+            }
+
+    #popularIngredientsCard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 100px;
+        flex-grow: 2.5;
+
+    }
+        #popularCanvas{
+            margin: 0 35px;
+        }
+
+        .notice{
+            color: red;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+/* 
+Ingredients Strand 
+*/
+#ingredientsStrand{
+    display: none;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+    #categoryList{
+        align-items:center;
+        overflow-y: auto;
+        width: 80%;
+    }
+
+    .categoryDiv > div:first-of-type{
+        display: flex;
+    }
+
+    .categoryDiv > div:first-of-type p{
+        display: flex;
+        align-items: center;
+        padding: 20px 0 20px 100px;
+        background: rgb(240, 252, 255);
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-right: 25px;
+        flex-grow: 1;
+    }
+
+    .categoryDiv > div:first-of-type button{
+        padding: 10px;
+        background: rgb(240, 252, 255);
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 75px;
+        height: 75px;
+        cursor: pointer;
+    }
+
+        .ingredientsDiv{
+            flex-direction: column;
+        }
+
+    .ingredient{
+        display: flex;
+        width: 50%;
+        padding: 15px;
+        margin: auto;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .ingredient:hover{
+            background: rgb(0, 27, 45);
+            color: white;
+        }
+
+        .ingredient > *{
+            width: 33%;
+            margin-right: 15px;
+        }
+
+        .ingredient > p:last-of-type{
+            text-align: right;
+        }
+
+        .ingredientSpacer{
+            border: none;
+            border-top: 1px dashed black;
+            margin: auto;
+        }
+
+/* 
+Recipe Book Strand 
+*/
+#recipeBookStrand{
+    display: none;
+    align-items: center;
+}
+
+    #recipeBookStrand .searchBar{
+        width: 50%;
+    }
+
+        #recipeSearch{
+            width: 50%;
+        }
+
+        #recipeSelect{
+            width: 25%;
+        }
+
+    #recipeList{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        overflow-y: auto;
+    }
+
+/* 
+Orders Strand 
+*/
+#ordersStrand{
+    display: none;
+    align-items: center;
+}
+
+    #orderList{
+        width: 50%;
+        margin-top: 50px;
+        overflow-y: auto;
+    }
+
+    .filterForm{
+        padding: 5px;
+        margin: 0;
+        align-items: center;
+        max-height: 150px;
+    }
+
+        .filterForm > div{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .filterForm input[type=submit]{
+            max-height: 30px;
+            padding: 0;
+            font-size: 15px;
+        }
+
+/*
+Transactions Strand
+*/
+.transactions{
+    display: none;
+    align-items: center;
+}
+
+    .transactionsList{
+        width: 50%;
+        overflow-y: auto;
+        margin-top: 50px;
+    }
+
+    #transactionFilter{
+        padding: 5px;
+        margin: 0;
+        align-items: center;
+        max-height: 150px;
+    }
+
+        #transactionFilter > div{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+            .dropdown{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                margin: 0;
+            }
+
+                .dropdown button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 5px;
+                    border: 1px solid black;
+                    background: none;
+                    cursor: pointer;
+                }
+
+                    .dropdownHead{
+                        display: flex;
+                    }
+
+                    .dropdown button:hover{
+                        background: rgb(0, 27, 45);
+                        color: white;
+                    }
+
+                .dropdownContents{
+                    text-align: left;
+                    position: absolute;
+                    top: 25px;
+                    background: rgb(240, 252, 255);
+                    z-index: 1;
+                    padding: 2px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    padding: 5px;
+                    white-space: nowrap;
+                }
+
+                    .dropDownContents label{
+                        margin: 0;
+                    }
+
+@media screen and (max-width: 1000px){
+    body{
+        flex-direction: column;
+        background: rgb(0, 27, 45);
+        color: white;
+    }
+
+        .contentBlock{
+            padding: 0;
+        }
+
+            .banner{
+                display: none;
+            }
+
+            .strandHead{
+                padding: 0;
+            }
+
+                .strandTitle{
+                    margin-top: 35px;
+                }
+
+        .mobileHide{
+            display: none;
+        }
+
+        .itemDisplay{
+            color: black;
+            padding: 5px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+            .itemDisplay:hover{
+                background: rgb(240, 252, 255);
+                color: black;
+            }
+
+        .smallItemDisplay{
+            color: black;
+        }
+
+    .filterForm{
+        display: none;
+    }
+
+    /*
+    Home
+    */
+    .card{
+        margin: 5px 10px;
+        background: white;
+        color: black;
+    }
+
+    #inventoryCheckCard{
+        display: none;
+    }
+
+    #popularIngredientsCard{
+        padding-bottom: 10px;
+    }
+
+    .flexRow{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    /*
+    Ingredients
+    */
+    #categoryList{
+        width: 95%;
+        color: black;
+    }
+
+        #ingredientSearch{
+            border-radius: 5px;
+        }
+
+        .categoryDiv > div:first-of-type p{
+            padding: 5px 0 5px 5px;
+        }
+
+        .categoryDiv div:first-of-type button{
+            height: 50px;
+            width: 50px;
+        }
+
+        .ingredient{
+            color: white;
+            width: 75%;
+            border: 2px solid rgb(201, 201, 201);
+            padding: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            box-shadow: 1px 1px gray;
+        }
+
+        .ingredient > *{
+            width: 50%;
+        }
+
+    /*
+    Recipe Book
+    */
+    .searchBar{
+        padding: 0;
+    }
+
+    .searchAndIcon{
+        width: 100%;
+    }
+
+    #recipeSearch{
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    #recipeList{
+        width: 95%;
+    }
+
+    /*
+    Orders
+    */
+    #orderList{
+        width: 95%;
+    }
+
+    /*
+    Transactions
+    */
+    .transactionsList{
+        width: 100%;
+    }
+}

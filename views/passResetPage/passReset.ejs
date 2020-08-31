@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>The Subline</title>
+        <link rel="icon" type="img/png" href="/shared/images/logo.png">
+        <link rel="stylesheet" href="/passResetPage/passReset.css">
+        <link rel="stylesheet" href="/shared/shared.css">
+    </head>
+    <body>
+        <% include ../shared/header %>
+
+        <% include ../shared/banner %>
+
+        <div class="content">
+            <h1>Reset Password</h1>
+
+            <form action="/merchant/password" method="post" onsubmit="submitPass()">
+                <label>New Password:
+                    <input type="password" id="pass" name="pass" required>
+                </label>
+
+                <label>Confirm Password:
+                    <input type="password" id="confirmPass" name="confirmPass" required>
+                </label>
+
+                <input class="button" type="submit" value="Submit">
+            </form>
+        </div>
+
+        <script src="/shared/validation.js"></script>
+        <script>
+            let submitPass = ()=>{
+                event.preventDefault();
+
+                let pass = document.getElementById("pass").value;
+                let confirmPass = document.getElementById("confirmPass").value;
+
+                if(validator.merchant.password(pass, confirmPass)){
+                    let url = window.location.href;
+                    let hash = url.slice(url.indexOf("resetpassword/") + 14);
+                    
+                    let form = document.querySelector("form");
+
+                    let hidden = document.createElement("input");
+                    hidden.type = "hidden";
+                    hidden.name = "hash";
+                    hidden.value = hash;
+                    form.appendChild(hidden);
+
+                    form.submit();
+                }
+            }
+        </script>
+    </body>
+</html>
